@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 71.073 71.07" width="71.073" height="71.07" role="img" aria-label="Factchequeado isologo (para fondo violeta)">
+<title>Factchequeado isologo (para fondo violeta)</title>
+<defs><linearGradient id="fc-degradado" gradientUnits="userSpaceOnUse" x1="21.698" y1="0" x2="49.376" y2="0"><stop offset="0" stop-color="#6C0080"/><stop offset="0.1" stop-color="#6C0080"/><stop offset="0.2" stop-color="#6A017F"/><stop offset="0.3" stop-color="#67027E"/><stop offset="0.4" stop-color="#62047D"/><stop offset="0.5" stop-color="#5B067A"/><stop offset="0.6" stop-color="#510A77"/><stop offset="0.7" stop-color="#450F72"/><stop offset="0.8" stop-color="#36156D"/><stop offset="0.9" stop-color="#231C67"/><stop offset="1" stop-color="#0D245F"/></linearGradient></defs>
+<path fill="#FFFFFF" d="M71.073 35.513C71.073 15.887 55.163 -0.023 35.537 -0.023C15.911 -0.023 0.001 15.887 0.001 35.513C0.001 55.139 15.911 71.049 35.537 71.049C55.163 71.049 71.073 55.139 71.073 35.513Z"/>
+<path fill="url(#fc-degradado)" d="M21.698 29.084L21.698 57.679L29.763 44.481L41.28 44.481L41.28 36.905L29.763 36.905L29.763 28.655C29.763 25.783 31.596 22.912 35.567 22.912C39.539 22.912 41.311 25.783 41.311 28.655L41.311 31.711L49.376 31.711L49.376 29.084C49.376 21.202 44 15.275 35.567 15.275C27.135 15.275 21.698 21.202 21.698 29.084Z"/>
+</svg>
