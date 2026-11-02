@@ -1,0 +1,15 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+torchvision
+transformers>=5.19
+sentence-transformers
+accelerate
+bitsandbytes
+pillow
+fastapi
+uvicorn[standard]
+feedparser
+sqlite-vec
+beautifulsoup4
+httpx
+python-dotenv
