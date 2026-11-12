@@ -1,0 +1,157 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Chalet: New York = 700 (títulos), London = 400. Ver Kit de marca/tipografias/Chalet. */
+@font-face {
+  font-family: "Chalet";
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/ChaletNewYorkNineteenSixty.woff") format("woff");
+}
+@font-face {
+  font-family: "Chalet";
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/ChaletLondonNineteenSixty.woff") format("woff");
+}
+
+@theme inline {
+  --font-heading: "Chalet", "Fira Sans", system-ui, sans-serif;
+  --font-sans: "Lato", system-ui, sans-serif;
+  --color-fc-violeta: var(--fc-violeta);
+  --color-fc-magenta: var(--fc-magenta);
+  --color-fc-azul: var(--fc-azul);
+  --color-fc-lavanda: var(--fc-lavanda);
+  --color-fc-frambuesa: var(--fc-frambuesa);
+  --color-fc-mostaza: var(--fc-mostaza);
+  --color-fc-cian: var(--fc-cian);
+  --color-fc-profundo: var(--fc-fondo-sellos);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Tokens de Kit de marca/web/tokens.css */
+  --fc-violeta: #67057c;
+  --fc-magenta: #970099;
+  --fc-azul: #0d245f;
+  --fc-lavanda: #83389c;
+  --fc-frambuesa: #ba2b5b;
+  --fc-mostaza: #f0ab34;
+  --fc-cian: #00d8cd;
+  --fc-fondo-sellos: #360646;
+  --fc-degradado: linear-gradient(90deg, #6c0080 0%, #5b067a 50%, #0d245f 100%);
+
+  --background: #faf8fb;
+  --foreground: #1a1020;
+  --card: #ffffff;
+  --card-foreground: #1a1020;
+  --popover: #ffffff;
+  --popover-foreground: #1a1020;
+  --primary: var(--fc-violeta);
+  --primary-foreground: #ffffff;
+  --secondary: #f1e8f4;
+  --secondary-foreground: #4a0459;
+  --muted: #f3f0f5;
+  --muted-foreground: #6b6272;
+  --accent: #f1e8f4;
+  --accent-foreground: #4a0459;
+  --destructive: #c8102e;
+  --border: #e6dfea;
+  --input: #e0d7e5;
+  --ring: #83389c;
+  --chart-1: var(--fc-violeta);
+  --chart-2: var(--fc-azul);
+  --chart-3: var(--fc-mostaza);
+  --chart-4: var(--fc-frambuesa);
+  --chart-5: #b9b2bf;
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: #140a19;
+  --foreground: #f4eef6;
+  --card: #1e1224;
+  --card-foreground: #f4eef6;
+  --popover: #1e1224;
+  --popover-foreground: #f4eef6;
+  --primary: #c98bdc;
+  --primary-foreground: #2a0333;
+  --secondary: #2c1a33;
+  --secondary-foreground: #f4eef6;
+  --muted: #2a1d30;
+  --muted-foreground: #b3a7b9;
+  --accent: #2c1a33;
+  --accent-foreground: #f4eef6;
+  --destructive: #ff6b81;
+  --border: rgb(255 255 255 / 10%);
+  --input: rgb(255 255 255 / 15%);
+  --ring: #c98bdc;
+  --chart-1: #c98bdc;
+  --chart-2: #7d9cf0;
+  --chart-3: var(--fc-mostaza);
+  --chart-4: #ef7aa1;
+  --chart-5: #6b6272;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+  html {
+    @apply font-sans;
+  }
+  h1, h2, h3 {
+    @apply font-heading;
+  }
+}
+
+/* Flechas del diagrama de Inicio: el trazo punteado avanza en el sentido del flujo. */
+@keyframes flujo {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+.flujo {
+  stroke-dasharray: 6 4;
+  animation: flujo 1.4s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .flujo {
+    animation: none;
+  }
+}
