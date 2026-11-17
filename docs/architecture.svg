@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1360 540" width="1360" height="540" role="img" aria-label="Escucha y Respuesta architecture: d1 classifies each message, harrier retrieves articles, a small model drafts, d1 verifies; urgent, sensitive or failing messages go to the journalist inbox, and journalists' answers join the knowledge base. Everything runs on the newsroom's server." font-family="Inter, 'Segoe UI', system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="f-violeta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#67057c"/>
+    </marker>
+    <marker id="f-ambar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#d97706"/>
+    </marker>
+    <marker id="f-gris" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8a8598"/>
+    </marker>
+  </defs>
+
+  <rect width="1360" height="540" fill="#ffffff"/>
+
+  <text x="20" y="38" font-size="22" font-weight="700" fill="#1a1530">How a message is handled</text>
+
+  <!-- Servidor del medio -->
+  <rect x="234" y="76" width="892" height="414" rx="18" fill="#faf5fb" stroke="#67057c" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <text x="252" y="68" font-size="12" font-weight="700" fill="#67057c" letter-spacing="0.06em">RUNS ON A SERVER THE NEWSROOM CONTROLS</text>
+
+  <!-- Base de datos (antes que las flechas, para que las puntas queden encima) -->
+  <rect x="250" y="370" width="860" height="104" rx="14" fill="#ffffff" stroke="#d6d1e0" stroke-width="1.5"/>
+  <text x="266" y="392" font-size="13" font-weight="700" fill="#1a1530">Database</text>
+  <text x="1094" y="392" font-size="12" text-anchor="end" fill="#8a8598">one per newsroom</text>
+  <rect x="266" y="402" width="190" height="58" rx="10" fill="#f4f1f8"/>
+  <text x="280" y="425" font-size="13" font-weight="700" fill="#1a1530">Settings</text>
+  <text x="280" y="445" font-size="12" fill="#5c566e">topic levels, service sheet</text>
+  <rect x="470" y="402" width="190" height="58" rx="10" fill="#f4f1f8"/>
+  <text x="484" y="425" font-size="13" font-weight="700" fill="#1a1530">Articles + vectors</text>
+  <text x="484" y="445" font-size="12" fill="#5c566e">sources + newsroom answers</text>
+  <rect x="674" y="402" width="190" height="58" rx="10" fill="#f4f1f8"/>
+  <text x="688" y="425" font-size="13" font-weight="700" fill="#1a1530">Conversations</text>
+  <text x="688" y="445" font-size="12" fill="#5c566e">7 days, or «borrar»</text>
+  <rect x="878" y="402" width="216" height="58" rx="10" fill="#f4f1f8"/>
+  <text x="892" y="425" font-size="13" font-weight="700" fill="#1a1530">Labels + traces</text>
+  <text x="892" y="445" font-size="12" fill="#5c566e">traces kept 30 days</text>
+
+  <!-- Fila principal -->
+  <rect x="20" y="80" width="170" height="112" rx="14" fill="#ffffff" stroke="#d6d1e0" stroke-width="1.5"/>
+  <text x="105" y="104" font-size="15" font-weight="700" fill="#1a1530" text-anchor="middle">Audience</text>
+  <text x="105" y="126" font-size="12" fill="#5c566e" text-anchor="middle">WhatsApp</text>
+  <text x="105" y="142" font-size="12" fill="#5c566e" text-anchor="middle">Facebook Messenger</text>
+  <text x="105" y="158" font-size="12" fill="#5c566e" text-anchor="middle">Instagram</text>
+  <text x="105" y="174" font-size="12" fill="#5c566e" text-anchor="middle">Safe web interface</text>
+
+  <rect x="250" y="100" width="170" height="72" rx="14" fill="#ffffff" stroke="#67057c" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="335" y="131" font-size="15" font-weight="700" fill="#67057c" text-anchor="middle">1 · Classify</text>
+  <text x="335" y="152" font-size="12" fill="#5c566e" text-anchor="middle">d1-2B</text>
+
+  <rect x="480" y="100" width="170" height="72" rx="14" fill="#ffffff" stroke="#67057c" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="565" y="131" font-size="15" font-weight="700" fill="#67057c" text-anchor="middle">2 · Retrieve</text>
+  <text x="565" y="152" font-size="12" fill="#5c566e" text-anchor="middle">harrier 0.6B</text>
+
+  <rect x="710" y="100" width="170" height="72" rx="14" fill="#ffffff" stroke="#67057c" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="795" y="124" font-size="15" font-weight="700" fill="#67057c" text-anchor="middle">3 · Draft</text>
+  <text x="795" y="144" font-size="12" fill="#5c566e" text-anchor="middle">LFM3-1.7B</text>
+  <text x="795" y="160" font-size="12" fill="#5c566e" text-anchor="middle">or Gemma 4 E4B</text>
+
+  <rect x="940" y="100" width="170" height="72" rx="14" fill="#ffffff" stroke="#67057c" stroke-opacity="0.45" stroke-width="1.5"/>
+  <text x="1025" y="131" font-size="15" font-weight="700" fill="#67057c" text-anchor="middle">4 · Verify</text>
+  <text x="1025" y="152" font-size="12" fill="#5c566e" text-anchor="middle">d1-2B</text>
+
+  <rect x="1170" y="100" width="170" height="72" rx="14" fill="#67057c"/>
+  <text x="1255" y="131" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Reply</text>
+  <text x="1255" y="152" font-size="12" fill="#f0e2f4" text-anchor="middle">with cited articles</text>
+
+  <path d="M192 136 H244" stroke="#67057c" stroke-width="2" fill="none" marker-end="url(#f-violeta)"/>
+  <path d="M422 136 H474" stroke="#67057c" stroke-width="2" fill="none" marker-end="url(#f-violeta)"/>
+  <path d="M652 136 H704" stroke="#67057c" stroke-width="2" fill="none" marker-end="url(#f-violeta)"/>
+  <path d="M882 136 H934" stroke="#67057c" stroke-width="2" fill="none" marker-end="url(#f-violeta)"/>
+  <path d="M1112 136 H1164" stroke="#67057c" stroke-width="2" fill="none" marker-end="url(#f-violeta)"/>
+
+  <!-- Búsqueda -->
+  <path d="M565 398 V176" stroke="#8a8598" stroke-width="1.75" fill="none" marker-start="url(#f-gris)" marker-end="url(#f-gris)"/>
+  <text x="575" y="290" font-size="12" fill="#8a8598">search</text>
+
+  <!-- Se anonimiza antes de guardar: sale del flujo, no de un paso -->
+  <circle cx="690" cy="136" r="4" fill="#67057c"/>
+  <path d="M690 140 V246" stroke="#67057c" stroke-opacity="0.5" stroke-width="1.5" fill="none" marker-end="url(#f-violeta)"/>
+  <rect x="635" y="250" width="110" height="30" rx="15" fill="#ffffff" stroke="#67057c" stroke-opacity="0.6" stroke-width="1.25"/>
+  <text x="690" y="270" font-size="12" font-weight="600" fill="#67057c" text-anchor="middle">anonymize</text>
+  <path d="M690 282 V398" stroke="#67057c" stroke-opacity="0.5" stroke-width="1.5" fill="none" marker-end="url(#f-violeta)"/>
+  <text x="698" y="318" font-size="12" font-style="italic" fill="#67057c">store</text>
+
+  <!-- La redacción -->
+  <rect x="940" y="240" width="170" height="72" rx="14" fill="#fffbeb" stroke="#fcd34d" stroke-width="1.5"/>
+  <text x="1025" y="271" font-size="15" font-weight="700" fill="#92400e" text-anchor="middle">Journalist inbox</text>
+  <text x="1025" y="292" font-size="12" fill="#92400e" text-anchor="middle">+ Slack / email alert</text>
+
+  <rect x="1170" y="240" width="170" height="72" rx="14" fill="#f59e0b"/>
+  <text x="1255" y="271" font-size="15" font-weight="700" fill="#ffffff" text-anchor="middle">Journalist</text>
+  <text x="1255" y="292" font-size="12" fill="#fff7e6" text-anchor="middle">answers</text>
+
+  <path d="M335 174 V208 H985 V234" stroke="#d97706" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f-ambar)"/>
+  <text x="350" y="200" font-size="12" font-style="italic" fill="#92400e">urgent or sensitive topic</text>
+
+  <path d="M1065 174 V234" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#f-ambar)"/>
+  <text x="1073" y="226" font-size="12" font-style="italic" fill="#92400e">fails</text>
+
+  <path d="M1112 276 H1164" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#f-ambar)"/>
+
+  <path d="M1255 238 V178" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#f-ambar)"/>
+
+  <path d="M1255 314 V340 H610 V396" stroke="#d97706" stroke-width="2" fill="none" stroke-linejoin="round" marker-end="url(#f-ambar)"/>
+  <text x="830" y="333" font-size="12" font-style="italic" fill="#92400e">answer joins the knowledge base</text>
+
+  <!-- Fuentes de conocimiento -->
+  <rect x="20" y="362" width="170" height="128" rx="14" fill="#ffffff" stroke="#d6d1e0" stroke-width="1.5"/>
+  <text x="105" y="386" font-size="15" font-weight="700" fill="#1a1530" text-anchor="middle">Knowledge sources</text>
+  <text x="105" y="408" font-size="12" fill="#5c566e" text-anchor="middle">Newsroom RSS</text>
+  <text x="105" y="424" font-size="12" fill="#5c566e" text-anchor="middle">Network knowledge base</text>
+  <text x="105" y="440" font-size="12" fill="#5c566e" text-anchor="middle">Predefined answers</text>
+  <text x="105" y="456" font-size="12" fill="#5c566e" text-anchor="middle">Trusted sources</text>
+  <text x="105" y="478" font-size="12" font-style="italic" fill="#8a8598" text-anchor="middle">automatic ingestion</text>
+  <path d="M192 431 H260" stroke="#8a8598" stroke-width="1.75" fill="none" marker-end="url(#f-gris)"/>
+
+  <text x="20" y="520" font-size="12" fill="#8a8598">Steps 1 and 4 return calibrated probabilities; each newsroom sets per topic how confident the system must be before it replies on its own.</text>
+</svg>
