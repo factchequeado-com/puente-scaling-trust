@@ -1,4 +1,4 @@
-# Respuestas Verificadas
+# Respuestas verificadas
 
 La mayoría de los chatbots para medios pone a un modelo de lenguaje generalista a cargo y confía en que no se aparte de sus fuentes. Nuestra infraestructura integra al proceso las decisiones de validación y derivación, y se apoya en modelos chicos e independientes, cada uno con su tarea.
 
