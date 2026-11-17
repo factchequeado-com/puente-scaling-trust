@@ -1,20 +1,21 @@
 # Escucha y Respuesta
 
-**Prototipo.** Un asistente que le permite a un medio local responderle a su audiencia solo con lo que publicó, pasarle a un periodista las preguntas que no puede responder y ver qué pregunta su comunidad.
+La mayoría de los chatbots para medios pone a un modelo de lenguaje generalista a cargo y confía en que no se aparte de sus fuentes. Escucha y Respuesta funciona al revés: cada decisión la toman modelos de decisión chicos. Un modelo de 2B clasifica cada mensaje y revisa cada borrador contra las notas que cita, con una probabilidad calibrada para cada control. Si un control falla, la pregunta va a un periodista: un error le cuesta un rato a la redacción en lugar de llegarle al público como desinformación.
 
-Lo hace [Factchequeado](https://factchequeado.com) para medios en español que informan a comunidades latinas en Estados Unidos, a partir de lo que aprendimos con ChatMigrante. *English: [README.md](README.md).*
+Cada medio decide, tema por tema, cuánta confianza necesita el sistema para responder solo. Puede dejar que el asistente conteste las preguntas de rutina sobre fechas de votación y que todas las de inmigración pasen por un periodista. Los modelos que toman esas decisiones entran en una GPU de 4 GB, en un servidor que controla el medio.
+
+Es un prototipo que funciona, hecho por [Factchequeado](https://factchequeado.com) para medios en español que informan a comunidades latinas en Estados Unidos, a partir de lo que aprendimos con ChatMigrante. *English: [README.md](README.md).*
 
 ![Cómo se procesa un mensaje](docs/architecture.svg)
 
 ## Cómo funciona
 
-- **Modelos chicos, cada uno con una tarea.** Un modelo de decisión de ~2B ([d1-2B](https://huggingface.co/LiquidAI/d1-2B)) clasifica cada mensaje y revisa cada borrador; un modelo de embeddings de 0,6B ([harrier](https://huggingface.co/microsoft/harrier-oss-v1-0.6b)) busca en las notas del medio; un generador chico escribe la respuesta. d1 y harrier entran juntos en una GPU de 4 GB.
-- **Nada sale sin revisar.** Antes de mandar una respuesta, d1 pregunta «¿Todo lo que dice está en las notas citadas?» y «¿Responde la pregunta?», cada una con una probabilidad calibrada. Si no pasa, la pregunta va a un periodista con el borrador y las fuentes.
-- **El medio pone los límites.** Para cada tema elige si el asistente responde solo, responde solo con mucha confianza o se lo pasa siempre a un periodista.
-- **Los periodistas le enseñan sin reentrenar.** Una respuesta escrita en la bandeja se suma a la base, y la próxima persona que pregunte la recibe, con la cita.
-- **Privacidad por defecto.** Una instalación y una base por medio. Los datos personales se quitan antes de guardar, las conversaciones vencen a la semana y cualquiera puede borrar la suya escribiendo «borrar».
+- [d1-2B](https://huggingface.co/LiquidAI/d1-2B) clasifica cada mensaje y revisa cada borrador. No escribe texto: responde preguntas como «¿Todo lo que dice está en las notas citadas?» y «¿Responde la pregunta?», cada una con una probabilidad. En nuestras pruebas, un modelo de lenguaje de 31B dio entre 95 y 100 % de confianza en todos los mensajes, mientras que los puntajes más bajos de d1 coincidieron con los casos realmente ambiguos.
+- [harrier](https://huggingface.co/microsoft/harrier-oss-v1-0.6b), un modelo de embeddings de 0,6B, busca en las notas del medio. Un generador chico escribe la respuesta a partir de ellas.
+- Cuando un periodista responde una pregunta derivada, la respuesta se suma a la base: el sistema aprende de la redacción sin reentrenar.
+- Cada medio tiene su propia instalación y su base. Los datos personales se quitan antes de guardar, las conversaciones vencen a la semana y cualquiera puede borrar la suya escribiendo «borrar».
 
-Canales: chat web, WhatsApp, Messenger e Instagram. La página de la redacción tiene la bandeja, avisos por Slack y correo, un tablero de lo que pregunta la comunidad, la base de conocimiento y los ajustes.
+Funciona por chat web, WhatsApp, Messenger e Instagram. La página de la redacción tiene la bandeja, avisos por Slack y correo, un tablero de lo que pregunta la comunidad, la base de conocimiento y los ajustes.
 
 ## Para empezar
 

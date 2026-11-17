@@ -1,20 +1,21 @@
 # Escucha y Respuesta
 
-**Prototype.** An assistant that lets a local newsroom answer its audience using only what it has published, hand the questions it can't answer to a journalist, and see what its community is asking.
+Most newsroom chatbots put a general-purpose language model in charge and trust it to stay within its sources. Escucha y Respuesta works the other way around: small decision models make every call. A 2B model classifies each message and checks each draft against the articles it cites, with a calibrated probability for every check. When a check fails, the question goes to a journalist, so a mistake costs a journalist some time instead of reaching the public as misinformation.
 
-Built by [Factchequeado](https://factchequeado.com) for Spanish-language newsrooms serving Latino communities in the United States, building on what we learned running ChatMigrante. *Español: [README.es.md](README.es.md).*
+Each newsroom decides, topic by topic, how confident the system must be before it answers on its own. It can let the assistant handle routine questions about voting dates and keep every immigration question in a journalist's hands. The models that make those decisions fit on a 4 GB GPU, on a server the newsroom controls.
+
+This is a working prototype by [Factchequeado](https://factchequeado.com), built for Spanish-language newsrooms serving Latino communities in the United States and building on what we learned running ChatMigrante. *Español: [README.es.md](README.es.md).*
 
 ![How a message is handled](docs/architecture.svg)
 
 ## How it works
 
-- **Small models, each with one job.** A ~2B decision model ([d1-2B](https://huggingface.co/LiquidAI/d1-2B)) classifies every message and checks every draft; a 0.6B embedding model ([harrier](https://huggingface.co/microsoft/harrier-oss-v1-0.6b)) searches the newsroom's articles; a small generator writes the reply. d1 and harrier run together on a 4 GB GPU.
-- **Nothing goes out unchecked.** Before a reply is sent, d1 asks "Is everything it says in the cited articles?" and "Does it answer the question?", each with a calibrated probability. If a check fails, the question goes to a journalist with the draft and the sources.
-- **The newsroom sets the limits.** For each topic, it chooses whether the assistant answers on its own, answers only with high confidence, or always hands over to a journalist.
-- **Journalists teach it without retraining.** An answer written in the inbox joins the knowledge base, so the next person who asks gets it, with a citation.
-- **Privacy by default.** One installation and database per newsroom. Personal data is stripped before storage, conversations expire after a week, and anyone can delete theirs by writing «borrar».
+- [d1-2B](https://huggingface.co/LiquidAI/d1-2B) classifies every message and checks every draft. It doesn't write text: it answers questions like "Is everything it says in the cited articles?" and "Does it answer the question?", each with a probability. In our tests, a 31B language model reported 95–100% confidence on every message, while d1's lowest scores matched the genuinely ambiguous ones.
+- [harrier](https://huggingface.co/microsoft/harrier-oss-v1-0.6b), a 0.6B embedding model, searches the newsroom's articles. A small generator drafts the reply from them.
+- When a journalist answers an escalated question, the answer joins the knowledge base, so the system learns from journalists without retraining.
+- Each newsroom has its own installation and database. Personal data is stripped before storage, conversations expire after a week, and anyone can delete theirs by writing «borrar».
 
-Channels: web chat, WhatsApp, Messenger and Instagram. The newsroom page includes the inbox, Slack and email alerts, a dashboard of what the community asks, the knowledge base and settings.
+It works over web chat, WhatsApp, Messenger and Instagram. The newsroom page has the inbox, Slack and email alerts, a dashboard of what the community asks, the knowledge base and the settings.
 
 ## Quick start
 
