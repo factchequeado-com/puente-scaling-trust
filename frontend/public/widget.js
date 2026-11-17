@@ -1,5 +1,5 @@
 /*
- * Escucha y respuesta: el chat como botón flotante en el sitio del medio.
+ * Respuestas Verificadas: el chat como botón flotante en el sitio del medio.
  *
  * Se pega una sola línea antes de </body> (en WordPress: Apariencia > Editor de temas, o un plugin de "header
  * y footer"):
@@ -11,7 +11,7 @@
  *   data-invitacion="¿Viste algo dudoso?"   globito que aparece la primera vez ("" para no mostrarlo)
  *   data-lado="izquierda"                   si el botón va abajo a la izquierda
  *
- * El chat vive en un iframe servido por la instalación de Escucha y respuesta: el sitio del medio no ve la
+ * El chat vive en un iframe servido por la instalación de Respuestas Verificadas: el sitio del medio no ve la
  * conversación ni guarda nada, y la conversación sigue aunque la persona cambie de página.
  */
 (function () {

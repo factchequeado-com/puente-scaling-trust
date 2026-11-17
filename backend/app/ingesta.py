@@ -75,7 +75,7 @@ def guardar_nota(con, *, url, titulo, seccion, fecha, imagen, fuente, parrafos) 
 
 def ingerir_rss(solo_nuevas: bool = True) -> dict:
     db.inicializar()
-    respuesta = httpx.get(ajustes.obtener("rss_url"), headers={"User-Agent": "Mozilla/5.0 escucha-respuesta"}, timeout=30,
+    respuesta = httpx.get(ajustes.obtener("rss_url"), headers={"User-Agent": "Mozilla/5.0 respuestas-verificadas"}, timeout=30,
                           follow_redirects=True)
     respuesta.raise_for_status()
     feed = feedparser.parse(respuesta.content)

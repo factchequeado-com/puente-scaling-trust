@@ -1,4 +1,4 @@
-"""API de Escucha y respuesta. Desarrollo: uvicorn app.main:app --reload --port 8000
+"""API de Respuestas Verificadas. Desarrollo: uvicorn app.main:app --reload --port 8000
 
 Rutas públicas: el chat (/api/chat y lo que necesita para retomar una conversación) y el webhook de Meta.
 Todo lo de la redacción pide sesión (usuarios.py); configurar el medio y el equipo, además, rol admin.
@@ -35,7 +35,7 @@ async def lifespan(_app):
     yield
 
 
-app = FastAPI(title="Escucha y respuesta", lifespan=lifespan)
+app = FastAPI(title="Respuestas Verificadas", lifespan=lifespan)
 
 
 class Mensaje(BaseModel):

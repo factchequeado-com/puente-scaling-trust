@@ -82,7 +82,7 @@ function Escritorio({ yo, alSalir, alVencer }: { yo: Usuario; alSalir: () => voi
           <Link to="/" className="flex items-center gap-2.5">
             <img src="/marca/isologo-circulo.svg" alt="" className="size-8" />
             <span className="leading-tight">
-              <span className="block font-heading text-base font-bold text-primary">Escucha y respuesta</span>
+              <span className="block font-heading text-base font-bold text-primary">Respuestas Verificadas</span>
               <span className="block text-xs text-muted-foreground">Redacción{medio && ` de ${medio}`}</span>
             </span>
           </Link>

@@ -37,7 +37,7 @@ export function Entrar({ alEntrar }: { alEntrar: (u: Usuario) => void }) {
         <div className="flex items-center gap-2.5">
           <img src="/marca/isologo-circulo.svg" alt="" className="size-9" />
           <div className="leading-tight">
-            <p className="font-heading text-base font-bold text-primary">Escucha y respuesta</p>
+            <p className="font-heading text-base font-bold text-primary">Respuestas Verificadas</p>
             <p className="text-xs text-muted-foreground">Redacción{estado?.medio && ` de ${estado.medio}`}</p>
           </div>
         </div>

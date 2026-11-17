@@ -23,7 +23,7 @@ log = logging.getLogger("uvicorn.error")
 TIEMPO = 5.0
 MAX_BYTES = 512_000
 MAX_SALTOS = 4
-AGENTE = "Mozilla/5.0 (compatible; escucha-respuesta/1.0; +https://factchequeado.com)"
+AGENTE = "Mozilla/5.0 (compatible; respuestas-verificadas/1.0; +https://factchequeado.com)"
 
 # Plataformas con oEmbed público. Facebook e Instagram piden un token de Meta: van por los metadatos.
 OEMBED = {

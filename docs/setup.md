@@ -15,8 +15,8 @@ This guide takes a newsroom from an empty server to a working assistant. Each in
 ## 2. Install
 
 ```bash
-git clone <this repository> escucha-respuesta
-cd escucha-respuesta/backend
+git clone https://github.com/factchequeado-com/respuestas-verificadas.git
+cd respuestas-verificadas/backend
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 cp .env.example .env
