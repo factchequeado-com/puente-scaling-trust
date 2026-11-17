@@ -10,6 +10,13 @@ Es un prototipo que funciona, desarrollado por [Factchequeado](https://factchequ
 
 ![Cómo se procesa un mensaje](docs/architecture.svg)
 
+<p align="center">
+  <img src="docs/img/chat.png" alt="El asistente responde un rumor por WhatsApp y cita la verificación del medio" width="33%">
+  <img src="docs/img/inbox.png" alt="La bandeja de la redacción: preguntas derivadas, el motivo de cada una y un borrador que no pasó la revisión de d1" width="63%">
+</p>
+
+*A la izquierda, el asistente responde un rumor por WhatsApp y cita la verificación. A la derecha, la bandeja de la redacción, con las preguntas que no respondió, el motivo y un borrador que no pasó la revisión de d1.*
+
 ## Cómo funciona
 
 - [d1-2B](https://huggingface.co/LiquidAI/d1-2B) clasifica cada mensaje y revisa cada borrador. Detecta urgencias, temas sensibles y más. En nuestras pruebas, un modelo de lenguaje de 31B dio entre 95 y 100 % de confianza en todos los mensajes, mientras que los puntajes más bajos de d1 coincidieron con los casos realmente ambiguos. Eso nos permite calibrar mejor las derivaciones y ser más cuidadosos con las preguntas que respondemos automáticamente.

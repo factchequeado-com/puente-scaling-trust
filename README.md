@@ -10,6 +10,13 @@ This is a working prototype developed by [Factchequeado](https://factchequeado.c
 
 ![How a message is handled](docs/architecture.svg)
 
+<p align="center">
+  <img src="docs/img/chat.png" alt="The assistant answers a rumor on WhatsApp, citing the newsroom's fact-check" width="33%">
+  <img src="docs/img/inbox.png" alt="The journalist inbox: escalated questions, the reason for each, and a draft that failed d1's check" width="63%">
+</p>
+
+*Left: the assistant answers a rumor on WhatsApp and cites the fact-check. Right: the journalist inbox, with the questions it didn't answer, why, and a draft that failed d1's check.*
+
 ## How it works
 
 - [d1-2B](https://huggingface.co/LiquidAI/d1-2B) classifies every message and checks every draft. It detects urgency, sensitive topics, and more. In our tests, a 31B language model reported 95–100% confidence on every message, while d1's lowest scores matched the genuinely ambiguous ones. This lets us better calibrate escalation decisions and be safer about which questions we answer automatically.
