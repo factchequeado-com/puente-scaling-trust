@@ -1,0 +1,14 @@
+backend/.venv/
+backend/.env
+backend/data/
+__pycache__/
+frontend/node_modules/
+frontend/dist/
+# Material interno: no va al repo público
+botalite_claims_dump.txt
+*.mp4
+respuestas-mozilla.md
+demo-video/
+
+# Fuentes con licencia comercial: no se pueden redistribuir
+frontend/public/fonts/

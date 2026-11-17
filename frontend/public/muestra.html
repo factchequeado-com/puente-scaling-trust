@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muestra: el chat en el sitio de Factchequeado</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #fff; }
+      /* El sitio real de fondo. Para probar el widget en cualquier sitio, cambiar ?sitio=https://… */
+      #sitio { position: fixed; inset: 0; width: 100%; height: 100%; border: 0; }
+      #etiqueta {
+        position: fixed; top: 10px; left: 50%; transform: translateX(-50%); z-index: 2147483645;
+        padding: 4px 10px; border-radius: 999px; background: rgba(13, 36, 95, .85); color: #fff;
+        font: 12px/1.4 system-ui, sans-serif; pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Muestra para la demo: el sitio de fondo es el real, en un iframe; el botón es el mismo widget.js que
+         cada medio pega en su sitio (ver docs/setup.md, «Embed the chat on your site»). -->
+    <iframe id="sitio" title="Sitio del medio"></iframe>
+    <div id="etiqueta">Muestra · el botón de chat lo agrega widget.js</div>
+    <script>
+      var p = new URLSearchParams(location.search)
+      document.getElementById("sitio").src = p.get("sitio") || "https://factchequeado.com/"
+      if (p.get("etiqueta") !== "1") document.getElementById("etiqueta").remove()
+    </script>
+    <script src="/widget.js" defer></script>
+  </body>
+</html>
