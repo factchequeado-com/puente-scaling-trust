@@ -5,7 +5,7 @@ A 2B JEV-inspired model (Liquid's AI d1) classifies each message and checks each
 A small 4B generative model drafts responses based on newsroom and allies knowledge base. 
 The whole infraestructure and decision models runs perfectly well on 8 GB GPU, so it's cheap to implement and run. 
 
-This is a working prototype developed by [Factchequeado](https://factchequeado.com), built for Spanish-language newsrooms serving Latino communities in the United States and building on what we learned running ChatMigrante. *Español: [README.es.md](README.es.md).*
+This is a working prototype developed by [Factchequeado](https://factchequeado.com), built for Spanish-language newsrooms serving Latino communities in the United States and building on what we learned running [ChatMigrante](https://factchequeado.com/press-releases/20250312/factchequeado-presenta-chatmigrante/). *Español: [README.es.md](README.es.md).*
 
 ![How a message is handled](docs/architecture.svg)
 

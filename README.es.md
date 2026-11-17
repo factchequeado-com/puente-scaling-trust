@@ -4,7 +4,7 @@ La mayoría de los chatbots para medios pone a un modelo de lenguaje generalista
 
 Cada medio decide, tema por tema, cuánta confianza necesita el sistema para responder solo. Puede dejar que el asistente conteste las preguntas de rutina sobre fechas de votación y que todas las de inmigración pasen por un periodista. Los modelos que toman esas decisiones entran en una GPU de 4 GB, en un servidor que controla el medio.
 
-Es un prototipo que funciona, hecho por [Factchequeado](https://factchequeado.com) para medios en español que informan a comunidades latinas en Estados Unidos, a partir de lo que aprendimos con ChatMigrante. *English: [README.md](README.md).*
+Es un prototipo que funciona, hecho por [Factchequeado](https://factchequeado.com) para medios en español que informan a comunidades latinas en Estados Unidos, a partir de lo que aprendimos con [ChatMigrante](https://factchequeado.com/press-releases/20250312/factchequeado-presenta-chatmigrante/). *English: [README.md](README.md).*
 
 ![Cómo se procesa un mensaje](docs/architecture.svg)
 
