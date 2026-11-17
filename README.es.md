@@ -34,8 +34,8 @@ Las guías están en inglés, en [docs/](docs/). El código, los prompts y los c
 
 ## Estado
 
-Un prototipo que funciona, no un producto terminado. Lo próximo: un set de evaluación con preguntas reales de la comunidad, generadores chicos locales, mejor anonimización, notas de voz y atender a varios medios desde una instalación compartida.
+Un prototipo que funciona, no un producto terminado. Lo próximo: un set de evaluación con preguntas reales de la comunidad, infraestructura propia con GPU, mejor anonimización, notas de voz y atender a varios medios desde una instalación compartida.
 
 ## Licencia
 
-A definir. Los modelos tienen sus propias licencias (d1: LFM Open License v1.0).
+[Apache 2.0](LICENSE). Los modelos tienen sus propias licencias: d1 usa la LFM Open License v1.0, y cada generador tiene sus propios términos.

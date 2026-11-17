@@ -42,8 +42,8 @@ Code, prompts and comments are in Spanish.
 
 ## Status
 
-A working prototype, not production software. Next: an evaluation set built from real community questions, small local generators, better anonymization, voice notes, and serving several newsrooms from one shared installation.
+A working prototype, not production software. Next: an evaluation set built from real community questions, self-owned GPU infrastructure, better anonymization, voice notes, and serving several newsrooms from one shared installation.
 
 ## License
 
-To be defined. Models keep their own licenses (d1: LFM Open License v1.0).
+[Apache 2.0](LICENSE). The models keep their own licenses: d1 uses the LFM Open License v1.0, and each generator has its own terms.
