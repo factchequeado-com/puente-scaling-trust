@@ -1,4 +1,4 @@
-# Respuestas Verificadas
+# Puente
 
 Most newsroom chatbots put a general-purpose language model in charge and trust it to stay within its sources. Our infrastructure builds validation and escalation decisions into the process and relies on small, independent models, each with its own task.
 
